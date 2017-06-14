@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: v6.1.0
+dependencies:
+    pre:
+        - sudo pip install awscli
+    post:
+        - sudo npm install gtmetrix -g
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
+  post:
+      - URL='http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/' yslow_score=2 pagespeed_score=3 node /home/ubuntu/S3ContinuousDeploy/script/gtmetrix.js 
