@@ -3,4 +3,4 @@ dependencies:
         - sudo pip install awscli
 deployment:
   commands:
-    - aws s3 sync /home/ubuntu/decander-experience/ s3://decanter-circleci-testing --delete
+    - aws s3 sync /home/ubuntu/S3ContinuousDeploy/ s3://decanter-circleci-testing --delete
