@@ -2,7 +2,7 @@ dependencies:
     override:
         - sudo pip install awscli
 deployment:
-  prod:
+  stage:
     branch: master
     commands:
       - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
