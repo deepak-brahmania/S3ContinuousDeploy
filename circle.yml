@@ -2,10 +2,12 @@ machine:
   node:
     version: v6.1.0
 dependencies:
-    pre:
-        - sudo pip install awscli
-    post:
-        - sudo npm install gtmetrix -g
+  overrides:
+      - npm i
+  pre:
+      - sudo pip install awscli
+  post:
+      - sudo npm install gtmetrix -p
 deployment:
   prod:
     branch: master
