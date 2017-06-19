@@ -1,0 +1,19 @@
+machine:
+  node:
+    version: v6.1.0
+dependencies:
+  pre:
+      - sudo pip install awscli
+      - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+      - sudo apt-get update
+      - sudo apt-get install google-chrome-stable
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
+test:
+  post:
+      - node ./script/gtmetrixExe.js URL='http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/' yslow_score=8 pagespeed_score=9
+
