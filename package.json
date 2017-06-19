@@ -4,6 +4,6 @@
   "private": false,
   "dependencies": {
     "gtmetrix": "^1.2.3",
-    "lighthouse": "^2.1.0"
+    "lighthouse": "^1.6.0"
   }
 }
