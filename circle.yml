@@ -11,7 +11,7 @@ dependencies:
       - echo 'dependencies installed'
 deployment:
   staging:
-    branch: /*/
+    branch: /^(?!master$).*$/
     commands:
       - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
       - echo 'project deployed'
