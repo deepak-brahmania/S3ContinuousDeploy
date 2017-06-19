@@ -14,6 +14,10 @@ deployment:
     branch: master
     commands:
       - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
-  post:
-      - URL='http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/' yslow_score=8 pagespeed_score=9 node ./script/gtmetrixExe.js
+test:
+      - node ./script/gtmetrixExe.js
+        environment:
+          URL: 'http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/'
+          yslow_score: 8
+          pagespeed_score: 9
 
