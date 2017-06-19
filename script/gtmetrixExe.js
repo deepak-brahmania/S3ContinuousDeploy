@@ -18,15 +18,15 @@ function runGtmetrix(yslowScore, pageSpeedScore) {
     if(data) {
       gtmetrix.test.get(data.test_id, 15000, function(err, data) {
         if(data.results.yslow_score >= yslowScore && data.results.pagespeed_score >= pageSpeedScore) {
-          // console.log(true); //successful
+          console.log(data.result, true); //successful
           return 1;
         } else{
-          // console.log(false); // failed
+          console.log(data.result, false); // failed
           return 0;
         }
       });
     } else{
-        // console.log(false); // no data
+        console.log(false); // no data
         return 0;
     }
   });

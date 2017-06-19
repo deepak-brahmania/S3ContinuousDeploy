@@ -8,12 +8,14 @@ dependencies:
       - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
       - sudo apt-get update
       - sudo apt-get install google-chrome-stable
+			- echo 'dependencies installed'
 deployment:
   prod:
     branch: master
     commands:
       - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
+			- echo 'project deployed'
 test:
   post:
       - node ./script/gtmetrixExe.js URL='http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/' yslow_score=8 pagespeed_score=9
-
+			- echo 'tesing completed'
