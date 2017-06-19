@@ -9,7 +9,7 @@ dependencies:
       - sudo apt-get update
       - sudo apt-get install google-chrome-stable
 deployment:
-  prod:
+  stage:
     branch: master
     commands:
       - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-test --delete
