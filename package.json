@@ -1,0 +1,9 @@
+{
+  "name": "S3ContinuousDeploy",
+  "version": "1.0.0",
+  "private": false,
+  "dependencies": {
+    "gtmetrix": "^1.2.3",
+    "lighthouse": "^1.6.0"
+  }
+}
