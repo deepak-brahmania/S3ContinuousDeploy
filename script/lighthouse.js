@@ -27,7 +27,7 @@ const url = process.env.URL;
 const flags = {
   output: 'html',
   chromeFlags: ['--headless'],
-  outputPath: './report.html',
+  outputPath: '/script/report.html'
 	}
 launchChromeAndRunLighthouse(url, flags, config).then(lighthouseResults => {
   lighthouseResults.artifacts = undefined; // You can save the artifacts separately if so desired
