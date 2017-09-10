@@ -23,4 +23,4 @@ test:
       - echo $CIRCLE_PR_USERNAME
       - echo $CIRCLE_PR_REPONAME
       - echo $CIRCLE_PR_NUMBER
-      - echo '1'
+      - exit  1
