@@ -18,7 +18,7 @@ test:
       - echo $CIRCLE_BRANCH
       - echo $CIRCLE_REPOSITORY_URL
       - echo $CIRCLE_BUILD_NUM
-      - echo $CI_PR_REQUEST
+      - echo $CI_PULL_REQUEST
       - echo $CIRCLE_USERNAME
       - echo $CIRCLE_PR_USERNAME
       - echo $CIRCLE_PR_REPONAME
