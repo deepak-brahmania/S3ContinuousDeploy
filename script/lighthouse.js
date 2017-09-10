@@ -23,9 +23,11 @@ function launchChromeAndRunLighthouse(url, flags, config) {
 }
 // Use an existing config or create a custom one.
 const config = require("lighthouse/lighthouse-core/config/perf.json");
-const url = "https://www.si.com/";
+const url = process.env.URL;
 const flags = {
-	output: "json",
+  output: 'html',
+  chromeFlags: ['--headless'],
+  outputPath: '/script/report.html'
 	}
 launchChromeAndRunLighthouse(url, flags, config).then(lighthouseResults => {
   lighthouseResults.artifacts = undefined; // You can save the artifacts separately if so desired
