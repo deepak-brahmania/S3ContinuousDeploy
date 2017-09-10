@@ -40,20 +40,20 @@ var gitHub = new GITHUB({
 //         console.log(element.body);
 //     })
 // });
-console.log(config.getToken());
+
 gitHub.authenticate({
     type:'token',
     token: config.getToken().TOKEN,
 });
 gitHub.issues.createComment({
-        owner: 'deepak-brahmania',
-        repo: 'S3ContinuousDeploy',
-        number: 11,
+        owner: process.env.owner,
+        repo: process.env.repo,
+        number: process.env.PR.split('/').pop(),
         body: 'Successfully Passed the Metrics'
     },function(error, result){
         if(error)
-            return error;
+            process.exit(1);
         else
-            console.log(result);
+            process.exit(0);
     }
 );
