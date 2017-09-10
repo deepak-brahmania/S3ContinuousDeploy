@@ -40,7 +40,6 @@ var gitHub = new GITHUB({
 //         console.log(element.body);
 //     })
 // });
-console.log('sdkhfsdhfhfiodshfli',process.env.username);
 gitHub.authenticate({
     type:'token',
     token: config.getToken().TOKEN,
