@@ -1,7 +1,7 @@
 
 let gtmetrix = require('gtmetrix')({
-  email: 'prashant.kumar@timeinc.com',
-  apikey: '4d674361d60ff54fa730f96950356e17',
+  email: 'daredreamer1990@gmail.com',
+  apikey: 'fda3b677b9fdad5601432a780723d598',
 });
 let config = {
   url: process.env.URL,
@@ -14,21 +14,22 @@ let config = {
  * @param {Integer} pageSpeedScore
  */
 function runGtmetrix(yslowScore, pageSpeedScore) {
-  gtmetrix.test.create(config, function(err, data) {
-    if(data) {
-      gtmetrix.test.get(data.test_id, 15000, function(err, data) {
-        if(data.results.yslow_score >= yslowScore && data.results.pagespeed_score >= pageSpeedScore) {
-          console.log(data.result, true); //successful
-          return 0;
-        } else{
-          console.log(data.result, false); // failed
-          return 1;
-        }
-      });
-    } else{
-        console.log(false); // no data
-        return 1;
-    }
-  });
+  // gtmetrix.test.create(config, function(err, data) {
+  //   if(data) {
+  //    return gtmetrix.test.get(data.test_id, 15000, function(err, data) {
+  //       if(data.results.yslow_score >= yslowScore && data.results.pagespeed_score >= pageSpeedScore) {
+  //         console.log(data.results, 0); //successful
+  //       } else{
+  //         console.log(data.results, 1); // failed
+
+  //       }
+  //     });
+  //   } else{
+  //     console.log(yslowScore, pageSpeedScore,config.url);
+  //       console.log(err ,1); // no data
+  //   }
+  // });
+  console.log(yslowScore, pageSpeedScore);
 }
 runGtmetrix(process.env.yslow_score, process.env.pagespeed_score);
+console.log(process.env);

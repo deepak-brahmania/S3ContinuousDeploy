@@ -13,6 +13,14 @@ test:
   pre:
       - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://decanter-circleci-testing --delete
   post:
-      - URL='http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/' yslow_score=8 pagespeed_score=9 node ./script/gtmetrixExe.js 
-      - URL='http://decanter-circleci-testing.s3-website-us-east-1.amazonaws.com/' node ./script/lighthouse.js > report.html
-      - echo 'tesing completed'
+      - echo $CIRCLE_PROJECT_USERNAME
+      - echo $CIRCLE_PROJECT_REPONAME
+      - echo $CIRCLE_BRANCH
+      - echo $CIRCLE_REPOSITORY_URL
+      - echo $CIRCLE_BUILD_NUM
+      - echo $CI_PR_REQUEST
+      - echo $CIRCLE_USERNAME
+      - echo $CIRCLE_PR_USERNAME
+      - echo $CIRCLE_PR_REPONAME
+      - echo $CIRCLE_PR_NUMBER
+      - echo '1'
