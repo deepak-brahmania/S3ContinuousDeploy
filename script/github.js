@@ -42,7 +42,7 @@ var gitHub = new GITHUB({
 // });
 gitHub.authenticate({
     type:'token',
-    token: config.getToken().TOKEN,
+    token: process.env.token,
 });
 gitHub.issues.createComment({
         owner: process.env.owner,
