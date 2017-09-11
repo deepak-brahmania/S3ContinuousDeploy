@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": false,
   "dependencies": {
+    "bluebird": "^3.5.0",
+    "github": "^10.1.0",
     "gtmetrix": "^1.2.3",
     "lighthouse": "^1.6.0"
   }
