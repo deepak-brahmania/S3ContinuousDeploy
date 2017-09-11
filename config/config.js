@@ -1,6 +1,6 @@
 function getToken() {
     return {
-        TOKEN:'42666af66492279fde9f6bc8752463208365685b'
+        TOKEN:'76295d4e224ca2705318a943b9ed1ebe07e099d3'
     };
 }
 module.exports = {
